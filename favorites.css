@@ -311,16 +311,16 @@
 
     .info p span:nth-child(1) {
         text-align: center;
-        font-size: 0.875rem;
+        font-size: 0.87rem;
         width: 70px;
     }
 
     .info p span:nth-child(2) {
-        font-size: 0.83rem;
+        font-size: 0.81rem;
     }
 
     .favorite-movie-card div div {
         display: flex;
-        font-size: 0.83rem;
+        font-size: 0.81rem;
     }
 }
