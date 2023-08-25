@@ -155,7 +155,7 @@ var imdbApp = (function () {
         const movieCardsContainer = document.getElementById("search-results");
         movieCardsContainer.innerHTML = "";
 
-        let url = "http://www.omdbapi.com/?";
+        let url = "https://www.omdbapi.com/?";
         if (movieName.value != '') {                         //condition is executed if moviename feild is not left empty by user
             url = `${url}&s=${movieName.value}`;
         }
