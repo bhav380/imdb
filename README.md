@@ -77,7 +77,7 @@ This web app is designed to be a simplified version of IMDb, offering a clean an
   - Language
   - IMDb rating
 
-![Movie Details](/readmeScreenShots/movieDetails.png)
+![Movie Details](/readmeScreenShots/movieDetails.PNG)
 
 
 </br>
@@ -88,7 +88,7 @@ This web app is designed to be a simplified version of IMDb, offering a clean an
 
 - **Accessing Favorites**: To access your favorite movies, click on the "Favorites" link in the navigation bar. Here, you'll find a collection of your saved movies. Click on a movie to view its details.
 
-![Favorites](/readmeScreenShots/fav.png)
+![Favorites](/readmeScreenShots/fav.PNG)
 
 
 </br>
