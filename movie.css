@@ -209,7 +209,7 @@ body {
     }
 
     .info-container span:nth-child(3) {
-        font-size: 0.84rem;
+        font-size: 0.89rem;
     }
 
     #buttons-container button:nth-child(1) {
@@ -255,13 +255,13 @@ body {
     }
 
     .card-text {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
 
     .info-container span:nth-child(1) {
         min-width: 75px;
         width: 75px;
-        font-size: 0.83rem;
+        font-size: 0.88rem;
     }
 
     .info-container span:nth-child(2) {
@@ -271,7 +271,7 @@ body {
     }
 
     .info-container span:nth-child(3) {
-        font-size: 0.8rem;
+        font-size: 0.88rem;
     }
 
     #buttons-container button {
