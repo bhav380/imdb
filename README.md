@@ -1,6 +1,6 @@
-# IMDb Clone Web App
+# IMDb Web App
 
-![IMDb Clone](link-to-your-app-screenshot.png)
+![IMDb]('https://github.com/bhav380/imdb/blob/main/readmeScreenShots/home.PNG?raw=true')
 
 ## Table of Contents
 
@@ -10,7 +10,7 @@
 
 ## Introduction
 
-The IMDb Clone Web App is a web application that allows users to browse, search for, and view details of movies and TV shows. It provides a user-friendly interface for discovering information about various films, including their titles, posters, plot summaries, cast, and IMDb ratings.
+The IMDb Web App is a web application that allows users to browse, search for, and view details of movies and TV shows. It provides a user-friendly interface for discovering information about various films, including their titles, posters, plot summaries, cast, and IMDb ratings.
 
 This web app is designed to be a simplified version of IMDb, offering a clean and intuitive interface for movie enthusiasts to explore and save their favorite films.
 
