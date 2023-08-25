@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+
+    <!-- ________Bootstrap________-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- __________Custom CSS_________-->
+    <link rel="stylesheet" href="./navbarAndFooter/_navbar.css">
+    <link rel="stylesheet" href="./navbarAndFooter/_footer.css">
+    <link rel="stylesheet" href="./favorites/favorites.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="imdb-clone-container" class="blur">
+
+        <nav id="nav-bar">
+            <div id="logo"><i class="fa-solid fa-film fa-spin"></i> <span>MovieClone</span></div>
+            <div id="nav-items">
+                <a href="#imdb-clone-container"><i class="fa-solid fa-house"></i> <span>Home</span></a>
+                <a href="#top-movies-container"><i class="fa-solid fa-fire"></i><span>Top Movies</span></a>
+                <a href="#"><i class="fa-solid fa-star"></i> <span>Favorites</span></a>
+                <a href="#search-movies-container"><i class="fa-solid fa-magnifying-glass"></i> <span>Search</span></a>
+            </div>
+            <div id="menu-bar"> <i class="fa-solid fa-bars"></i></div>
+        </nav>
+
+
+        <main>
+
+            <div id="header-img-container">
+                <img src="./images/9.jpg" alt="">
+            </div>
+
+            <section id="top-movies-container">
+                <header id="top-movies-header">
+                    Top movies in theatres
+                </header>
+                <div id="movies-container">                        <!-- This will contain Top movies  (movie data will use template of template-movie-card)-->
+                </div>
+            </section>
+
+            <section id="search-movies-container">
+                <div id="search">
+                    <div>
+                        <input name="movie-name" id="movie-name" class="form-control me-2" type="text"
+                            placeholder="&ensp;Search &ensp;( movies , web-series, anime ) " aria-label="Search url">
+                        <input id="year" name="year" type="number" class="form-control me-2" placeholder=" year">
+                    </div>
+                </div>
+            </section>
+
+            <section id="search-results-container">
+                <div id="search-results-msg"></div>
+                <div id="search-results">                          <!-- This will contain searched movies  (movie data will use template of template-movie-card)-->
+                </div>
+                <button id="load-more-button"> Load more</button>
+            </section>
+
+
+            <template id="template-movie-card">
+
+                <div data-imdbid="" class="movie-card">
+
+                    <div class="image">
+                        <img src='./images/6.jpg' alt="" class="movie-img">
+                    </div>
+
+                    <div class="content-box">
+                        <div>
+                            <h3 class="movie-title">
+                            </h3>
+                        </div>
+
+                        <div class="other-info">
+                            <span class="type">
+                            </span>
+
+                            <span class="year">
+                            </span>
+
+                            <button class="add-to-favorites"><i data-imdbid="" data-isfav='false'
+                                    class="fa-solid fa-star"></i></button>
+                        </div>
+                        <a style="display:inline-block" href="" class="btn">Watch</a>
+                    </div>
+                </div>
+
+            </template>
+
+        </main>
+
+        
+
+        <section id="favorites-container">
+
+            <a href="#" id="close-favorites"><span>close</span><i class="fa-solid fa-arrow-right-long"></i></a>
+            <h1>
+                <i class="fa-solid fa-star"> </i> Favorites
+            </h1>
+            <div id="fav-movies">      <!-- This will contain movies added to favorites (fav movie cards will use template of #template-fav-movie)-->
+            </div>
+
+            <template id="template-fav-movie">
+                <div data-idimdb="" class="favorite-movie-card" class="color-white">
+                    <div>
+                        <img src="https://i.scdn.co/image/ab67706f000000035324fd190d03c6f3160c9bc8" alt="wallpaper">
+                        <div class="info">
+                            <p style="color:black" class="color-white">
+                                <span>Title : </span>
+                                <span class="title"></span>
+                            </p>
+                            <p style="color:black">
+                                <span> Type : </span>
+                                <span class="type"></span>
+                            </p>
+                            <p>
+                                <span>Year : </span>
+                                <span class="year"></span>
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <button data-imdbid="" class="watch">Watch</button>
+                        <button class="delete"><i data-imdbid="" class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            </template>
+
+
+        </section>
+    </div>
+
+
+
+
+
+
+    <!-- ______________________________________Footer____________________________________________________ -->
+
+    <section class="footer" background-image="url('./images/6.jpg')">
+
+        <div class="box-container">
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="#imdb-clone-container"> <i class="fas fa-angle-right"></i> home</a>
+                <a href="#top-movies-container"> <i class="fas fa-angle-right"></i> Top Movies</a>
+                <a href="#search-movies-container"> <i class="fas fa-angle-right"></i> Search Movies</a>
+                <a href="#"> <i class="fas fa-angle-right"></i> More</a>
+            </div>
+
+            <div class="box">
+                <h3>extra links</h3>
+                <a href="#"> <i class="fas fa-angle-right"></i> ask questions</a>
+                <a href="#"> <i class="fas fa-angle-right"></i> about us</a>
+                <a href="#"> <i class="fas fa-angle-right"></i> privacy policy</a>
+                <a href="#"> <i class="fas fa-angle-right"></i> terms of use</a>
+            </div>
+
+            <div class="box">
+                <h3 id="contact-us">contact info</h3>
+                <a href="#"> <i class="fas fa-phone"></i> 9412165680 </a>
+                <a href="#"> <i class="fas fa-phone"></i> 7906660684</a>
+                <a id="my-email" href="#"> <i class="fas fa-envelope"></i>bhaveshrathour4@gmail.com </a>
+                <a href="#"> <i class="fas fa-map"></i> Nainital, india - 263001 </a>
+            </div>
+
+            <div class="box">
+                <h3>follow us</h3>
+                <a href="https://www.facebook.com/bhavesh.rathour.1"> <i class="fab fa-facebook-f"></i> facebook </a>
+                <a href="https://instagram.com/__mr.codex___?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D"> <i
+                        class="fab fa-instagram"></i> instagram </a>
+                <a href="https://www.linkedin.com/in/rathour2bhawesh"> <i class="fab fa-linkedin"></i> linkedin </a>
+                <a href="https://www.twitter.com">
+                    <i class="fab fa-linkedin"></i> Twitter </a>
+            </div>
+        </div>
+
+        <div class="credit">
+            <div>
+                <span>My</span> Product | all rights reserved!
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- ___________________________Javascript files________________________________________________-->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/1505e6fedb.js" crossorigin="anonymous"></script>
+
+
+    <script src="script.js"> </script>
+    <script src="./favorites/favorites.js"></script>
+    <script src="./navbarAndFooter/navbar.js"></script>
+</body>
+
+</html>

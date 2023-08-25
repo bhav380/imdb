@@ -1,0 +1,325 @@
+/* ____________________________________favorites container in index.html_________________________________________*/
+
+#favorites-container {
+    z-index: 2;
+    background: linear-gradient(white 0.1%, rgba(186, 185, 185, 0.493));
+    position: fixed;
+    top: 110px;
+    right: 0;
+    background-color: white;
+    width: 650px;
+    box-shadow: -2px 2px 1px 1px black;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 105vh;
+    margin-bottom: 150px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    display: none;
+}
+
+
+#favorites-container::-webkit-scrollbar {
+    display: none;
+}
+
+#close-favorites {
+    /* font-size:1.6rem; */
+    position:absolute;
+    top:8px;
+    left:9px;
+    color:rgba(255, 0, 0, 0.722);
+    text-decoration: none;
+    
+}
+
+#close-favorites:hover{
+    color:red;
+}
+
+#close-favorites span{
+    margin-right:5px;
+    font-size:0.88rem;
+    font-weight: 500;
+}
+#close-favorites i{
+    font-size:1.05rem;
+}
+
+
+#favorites-container h1 {
+    /* position: fixed; */
+    text-align: center;
+    font-family: cursive;
+    font-size: 2.5rem;
+    margin-left: 5px;
+    margin-bottom: 100px;
+    ;
+
+}
+
+#favorites h1::first-letter {
+    font-size: 3.5rem;
+
+}
+
+#fav-movies {
+    display: flex;
+    flex-direction: column;
+}
+
+/*  ______________________template-fav-movie____________________________*/
+
+.favorite-movie-card {
+
+    background-color: white;
+    height: 325px;
+    border: 2px solid black;
+    cursor: pointer;
+    margin-left: 5px;
+    margin-bottom:60px;
+    /* transition:0.5s ease-in-out; */
+}
+
+.favorite-movie-card:nth-last-child(1) {
+    margin-bottom: 180px;
+    ;
+}
+
+.favorite-movie-card>div {
+    display: flex;
+    align-content: center;
+
+}
+
+.favorite-movie-card img {
+
+    width: 300px;
+    min-width: 300px;
+    height: 236px;
+    margin-right: 20px;
+}
+
+.favorite-movie-card div {
+    line-height: 0.3rem;
+}
+
+.favorite-movie-card .info {
+    position: relative;
+    left: -20px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.info p {
+    margin-top: 6px;
+    height: 50px;
+    width: 335px;
+    display: flex;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+.info p span {
+    display: inline-block;
+    font-family: cursive;
+    height: 100%;
+    width: 100%;
+    padding-top: 20px;
+    overflow-x: hidden;
+    text-overflow: clip;
+}
+
+.info p span:nth-child(1) {
+    text-align: center;
+    font-size: 0.99rem;
+    width: 70px;
+}
+
+.info p span:nth-child(2) {
+    font-size: 0.9rem;
+}
+
+.favorite-movie-card div div {
+    display: flex;
+    font-size: 0.95rem;
+}
+
+.favorite-movie-card .buttons {
+    border: 1.6px solid black;
+    width: 100%;
+    height: 87px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.favorite-movie-card .buttons .watch {
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.941);
+    color: white;
+    font-size: 1.3rem;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    width: 500px;
+    height: 50px;
+}
+
+
+.favorite-movie-card .buttons .watch:hover {
+    background-color: white;
+    color: black;
+    border: 0.1px solid black;
+    font-size: 1.4rem;
+}
+
+.favorite-movie-card .buttons .delete {
+
+    background-color: white;
+    border: 1px solid black;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    width: 40px;
+    height: 50px;
+    outline: none;
+    font-size: 1.2rem;
+    color: white;
+    border-left: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.926);
+}
+
+.favorite-movie-card .buttons .delete:hover {
+    background-color: white;
+}
+
+.favorite-movie-card .buttons .delete:hover i {
+    font-size: 1.33rem;
+    color: black;
+}
+
+.color-white {
+    color: white;
+}
+
+
+
+/* ______________________________________media query______________________________*/
+
+
+@media only screen and (max-width:720px) {
+
+    #favorites-container {
+        width: 94%;
+        min-width: 470px;
+    }
+
+    .favorite-movie-card img {
+        min-width: 43.8%;
+    }
+
+    .favorite-movie-card .buttons {
+        width: 100%;
+    }
+
+    .favorite-movie-card .buttons .watch {
+        max-width: 495px;
+        width: 76%;
+    }
+
+    .info {
+        width: 55%;
+    }
+
+    .info p:nth-child(1) {
+        height: 70px;
+        width: 100%;
+    }
+
+    .info p:nth-child(1) span:nth-child(1) {
+        position: relative;
+        width: 100%;
+        left: -1px;
+        line-height: 1.6rem;
+        width: 66px;
+    }
+
+    .info p .title {
+        position: relative;
+        left: -1px;
+        display: inline-block;
+        overflow-wrap: break-word;
+        line-height: 1.6rem;
+        width: 90%;
+        min-width: 20%;
+    }
+}
+
+@media only screen and (max-width:480px) {
+
+    #close-favorites{
+        font-size:0.9rem;
+    }
+
+    #close-favorites span{
+        margin-right:3px;
+    }
+
+    #close-favorites i{
+        font-size:0.92rem;
+    }
+
+
+    #favorites-container {
+        width: 100%;
+        min-width: 300px;
+    }
+        
+    #favorites-container h1 {
+        text-align: center;
+        font-family: cursive;
+        font-size: 1.6rem;
+        margin-left: 5px;
+        margin-bottom: 70px;
+    }
+
+    #favorites h1::first-letter {
+        font-size: 3.5rem;
+    }
+
+    #favorites-container h1 i{
+        font-size:1.3rem;
+    }
+    .favorite-movie-card {
+        height: 309px;
+    }
+
+    .favorite-movie-card img {
+        height: 225px;
+    }
+
+    .favorite-movie-card .buttons {
+        position: relative;
+        top:-11px;
+        height: 82px;
+    }
+
+    .info p span:nth-child(1) {
+        text-align: center;
+        font-size: 0.865rem;
+        width: 70px;
+    }
+
+    .info p span:nth-child(2) {
+        font-size: 0.79rem;
+    }
+
+    .favorite-movie-card div div {
+        display: flex;
+        font-size: 0.79rem;
+    }
+}
