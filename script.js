@@ -42,7 +42,7 @@ var imdbApp = (function () {
 
         if (event.target.className == 'btn') {
             localStorage.setItem("seeMovieImdbid", event.target.dataset.imdbid);
-            event.target.href = './movie/movie.html';
+            event.target.href = './movie.html';
         }
     }
 

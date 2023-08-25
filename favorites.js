@@ -142,7 +142,7 @@
 
             if (event.target.className == 'watch') {                // on clicking watch button
                 localStorage.setItem("seeMovieImdbid", event.target.dataset.imdbid);   // seeMovieImdbid variable in localStorage is used by movie.js to show movie details, it stores imdbid of movie whose details users wants to watch
-                window.location.href = './movie/movie.html';                           // opens movie.html page
+                window.location.href = './movie.html';                           // opens movie.html page
             }
 
             if (event.target.className == 'fa-solid fa-trash' && confirm('Remove From Favorites ?')) {  // on clicking delete button
