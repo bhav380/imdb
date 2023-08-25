@@ -25,7 +25,7 @@
 
 
         if(movie.Poster=='N/A'){
-            poster.src = '../images/imgNotAvailable.jpg';
+            poster.src = './images/imgNotAvailable.jpg';
         }else{
             poster.src = movie.Poster;
         }
