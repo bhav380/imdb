@@ -26,7 +26,7 @@ var imdbApp = (function () {
 
         topMoviesImdbId.forEach(async (id) => {
 
-            let url = `http://www.omdbapi.com/?i=${id}&apiKey=${API_KEY}`;
+            let url = `https://www.omdbapi.com/?i=${id}&apiKey=${API_KEY}`;
             const res = await fetch(`${url}`);
             const data = await res.json();
 
