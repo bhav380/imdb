@@ -35,7 +35,7 @@
 
     async function fetchMovieData(movieImdbid){
 
-        let url = `http://www.omdbapi.com/?i=${movieImdbid}&plot=full&apiKey=${API_KEY}`;
+        let url = `https://www.omdbapi.com/?i=${movieImdbid}&plot=full&apiKey=${API_KEY}`;
         const res = await fetch(`${url}`);
         const data = await res.json();
         bindData(data);

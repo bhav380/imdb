@@ -41,7 +41,7 @@
 
         const templateFavMovie = document.getElementById('template-fav-movie');       
         const favMovies = document.getElementById('fav-movies');
-        let url = `http://www.omdbapi.com/?i=${movieImdbid}&apiKey=${API_KEY}`;
+        let url = `https://www.omdbapi.com/?i=${movieImdbid}&apiKey=${API_KEY}`;
 
         const res = await fetch(`${url}`);
         const data = await res.json();
