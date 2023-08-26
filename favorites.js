@@ -1,7 +1,7 @@
 (function () {
 
     const API_KEY = "5d3bf326";
-
+    
     if (localStorage.getItem('favMoviesImdbid') == null) {                   // if favMoviesImdbid in local storage is null create favMoviesImdbid which will store imdbid of movies added to favorites
         localStorage.setItem('favMoviesImdbid', JSON.stringify([]));
     }
@@ -51,6 +51,7 @@
         favMovies.appendChild(cardClone);               // appends cardClone to #fav-movies (favMovies)
     }
 
+
     function appendFavMovies() {
         const favMovies = document.getElementById('fav-movies');
         favMovies.innerHTML='';
@@ -59,7 +60,6 @@
             fetchMovieData(id);              //fetched movie from api using imdbid and adds it to #fav-movies
         });
     }
-
 
     //_________________________________________Add and Remove From Favorites (using start icon in movie cards)_____________________________________
     function addToFavorites(imdbid) {
@@ -86,8 +86,11 @@
         localStorage.setItem('favMoviesImdbid', JSON.stringify(imdbidArray));  // saves updated imdbidArray in localStorage
     }
 
-    function addAndRemoveFavorites() {
 
+
+
+    function addAndRemoveFavorites() {
+        
         let imdbCloneContainerMain = document.querySelector('#imdb-clone-container main');
         imdbCloneContainerMain.addEventListener('click', (event) => {
 
@@ -110,13 +113,13 @@
             }
         });
     }
-
     // __________________________________display favorite page_________________________________
     function favoriteMoviePage() {
 
+    
         let openFavPageButton = document.querySelector('#nav-items>a:nth-child(3)');
         let closeFavPage = document.querySelector('#close-favorites');
-
+    
         let favoritesContainer = document.getElementById('favorites-container');
         let main = document.querySelector('#imdb-clone-container main');
         openFavPageButton.addEventListener('click', (e) => {
@@ -135,9 +138,10 @@
 
     // ________________________________________see movie Details (watch button linked to movie.html page) and Delete functionality using trash icon_______________________________________________
 
+
+
     function seeMovieDetailsAndDelete() {
         let favMovies = document.getElementById('fav-movies')
-
         favMovies.addEventListener('click', (event) => {
 
             if (event.target.className == 'watch') {                // on clicking watch button
@@ -159,11 +163,11 @@
 
     function favorites() {
 
-        appendFavMovies();            // adds movies whose imdbid is present inside favMoviesImdbid (localStorage variable) in DOM
+        appendFavMovies();            // adds movies whose imdbid is present inside favMoviesImdbid (localStorage variable) in DO
 
         addAndRemoveFavorites();      // add and remove favortie movies (using fa-star icon) functionality inside movie cards present in main 
-
-        favoriteMoviePage();           // this function displays favMovies on clicking favorites link in navbar and adds close fav page functionality 
+    
+        favoriteMoviePage();           // this function displays favMovies on clicking favorites link in navbar and adds close fav page functionality
 
         seeMovieDetailsAndDelete();   // links watch button of movies (inside #fav-movies) to movie.html page and adds delete movie functionality
     }
@@ -171,45 +175,5 @@
     //_____________________________________call to favorites()___________________________________________________________________________________
 
     favorites();  
-
 })();
 
-
-
-
-
-    // function favoriteMoviePage() {
-
-
-    //     let openFavPageButton = document.querySelector('#nav-items>a:nth-child(3)');
-    //     let showFavPage = false;
-
-    //     openFavPageButton.addEventListener('click', (e) => {
-    //         e.preventDefault();
-    //         showFavPage = !showFavPage;
-
-    //         let favoritesContainer = document.getElementById('favorites-container');
-    //         let main = document.querySelector('#imdb-clone-container main');
-
-    //         if (showFavPage) {
-    //             favoritesContainer.style.display = 'flex';
-    //             main.style.opacity = '0.65';
-
-    //         } else {
-    //             favoritesContainer.style.display = 'none';
-    //             main.style.opacity = '1';
-    //         }
-
-    //     });
-
-    // }
-
-
-
-    
-        // let favimdbids = JSON.parse(localStorage.getItem('favMoviesImdbid'));
-        // favimdbids.filter((id) => {                         
-        //     if (movie.imdbID == id) {                   // if imdbid of this movie is present inside favMoviesImdbid array (present inside localStorage) delete buttons data-attribute isfav is set to true
-        //         deleteBtn.dataset.isfav = 'true';
-        //     }
-        // });

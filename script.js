@@ -2,10 +2,7 @@
 var imdbApp = (function () {
 
     const API_KEY = "5d3bf326";
-    var seeMovieImdbId;   //  when watch button of any movie card is clicked , this variable will store imdbid of that movie ...then value of this variable is stored inside local storage ... which then is accessed by movie.js file to render movie details
     var topMoviesImdbId = ["tt9362722", "tt15398776", "tt1517268", "tt16437278", "tt3107288", "tt6791350", "tt10366206", "tt1630029", "tt14444726", "tt11145118"]; // Movies having these imdbid will be shown inside Top Movies Container
-
-
 
     //performs animation on header image (zoom outs the img when page loads)
     function headerImgAnimation() {
@@ -14,9 +11,7 @@ var imdbApp = (function () {
         setTimeout(function () {
             img.style.transform = "scale(1)"
         });
-
     }
-
 
     // fills top-movies-container with movies whose imdbid is present inside topMoviesImdbId array
     function getTopMovies() {
@@ -36,7 +31,6 @@ var imdbApp = (function () {
         });
     }
 
-
     // on clicking watch button (inside movie card) movie.html page will open
     function seeMovieDetails(event) {
 
@@ -45,9 +39,7 @@ var imdbApp = (function () {
             event.target.href = './movie.html';
         }
     }
-
-
-    //___________________________________________________________Search Movies______________________________________________________________
+    //__________________________________________________________Search Movies______________________________________________________________
 
     function fillDataInCard(cardClone, movie) {
         const movieCard = cardClone.querySelector('.movie-card');
@@ -57,7 +49,6 @@ var imdbApp = (function () {
         const type = cardClone.querySelector('.type');
         const watchBtn = cardClone.querySelector('.btn');
         const favBtn = cardClone.querySelector('.add-to-favorites i');
-
         movieCard.dataset.imdbid = movie.imdbID;
         watchBtn.dataset.imdbid = movie.imdbID;
         favBtn.dataset.imdbid = movie.imdbID;
@@ -65,17 +56,16 @@ var imdbApp = (function () {
         year.innerHTML = movie.Year;
         type.innerHTML = movie.Type;
 
-
-        if(movie.Poster=='N/A'){
+        if (movie.Poster == 'N/A') {
 
             poster.src = './images/imgNotAvailable.jpg';
 
-        }else{
+        } else {
             poster.src = movie.Poster;
         }
 
-        console.log(movie.Title);
-        console.log(movie.Poster);
+        // console.log(movie.Title);
+        // console.log(movie.Poster);
 
         let favimdbids = JSON.parse(localStorage.getItem('favMoviesImdbid')); // extracts imdbIds of movies inside favorties
         favimdbids.filter((id) => {
@@ -98,7 +88,6 @@ var imdbApp = (function () {
             movieCardsContainer.appendChild(cardClone);                       // appends cardClone to #search-results (movieCardsContainer)
         });
     }
-
     function loadMoreMovies(url, currentItem) {
 
         let loadMoreBtn = document.querySelector('#load-more-button');
@@ -109,7 +98,7 @@ var imdbApp = (function () {
         loadMoreBtn.onclick = async () => {
 
             let cards = document.querySelectorAll('#search-results .movie-card');
-            for (let i = currentItem; i < currentItem + 6 && i < cards.length; i++) {     
+            for (let i = currentItem; i < currentItem + 6 && i < cards.length; i++) {
                 cards[i].style.display = 'flex';
             }
 
@@ -120,7 +109,7 @@ var imdbApp = (function () {
                 let prevCardLength = cards.length;
                 if (await fetchMovies(`${url}&Page=${pageNum}`)) {           //Page = [pagenum] is passed as query in url (it gets movies from page = [pagenum] (ex-page=2 ,page=3 so on..) of api response )
 
-                    let updatedCards = document.querySelectorAll('#search-results .movie-card');    
+                    let updatedCards = document.querySelectorAll('#search-results .movie-card');
 
                     for (let i = prevCardLength; i < currentItem && i < updatedCards.length; i++) {    // loads remaining movies into DOM ( if less than 6 movies were loaded on clicking load button (this happens when there are no movies to load and we need to make api call for next page))
 
@@ -130,7 +119,7 @@ var imdbApp = (function () {
                 } else {
                     loadMoreBtn.style.display = 'none';           // if there are no more pages to fetch movies loadMore Button display will be set to none
                 }
-                pageNum++;                                     
+                pageNum++;
             }
         }
     }
@@ -146,15 +135,17 @@ var imdbApp = (function () {
         if (data.totalResults > 6) {
             loadMoreMovies(url, 6);        //on clicking loadMore button 6 more movies are loaded in DOM
         }
+
         bindData(data.Search);            // fills fetched movies inside #search-results
         return true;
     }
+
+
 
     async function movieSuggestions(movieName, year) {
 
         const movieCardsContainer = document.getElementById("search-results");
         movieCardsContainer.innerHTML = "";
-
         let url = "https://www.omdbapi.com/?";
         if (movieName.value != '') {                         //condition is executed if moviename feild is not left empty by user
             url = `${url}&s=${movieName.value}`;
@@ -177,6 +168,7 @@ var imdbApp = (function () {
         }
     }
 
+
     function searchMovies() {
 
         let movieName = document.querySelector('#search div #movie-name');
@@ -188,7 +180,6 @@ var imdbApp = (function () {
             movieSuggestions(movieName, year)
         }
         );
-
         year.addEventListener('keyup', () => {
             movieSuggestions(movieName, year)
         });
@@ -197,9 +188,7 @@ var imdbApp = (function () {
 
     //________________________________________________window onload________________________________________________________
 
-
     window.onload = () => {
-
         headerImgAnimation();
         getTopMovies();
 
@@ -217,7 +206,6 @@ var imdbApp = (function () {
     }
 
     return {
-        SeeMovieImdbId: seeMovieImdbId,
         getTopMovies: getTopMovies,                 // exporting getTopMovies() and movieSuggestions() functions ----(used by favorite.js to toggle data-id attribute isFav of movie cards)
         movieSuggestions: movieSuggestions
     }

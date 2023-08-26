@@ -162,9 +162,9 @@
     border: 1px solid black;
     outline: none;
     background-color: rgba(0, 0, 0, 0.941);
-    color:#d36a9f;
+    color:#d36a9ef3;
     font-size: 1.3rem;
-    font-weight: bold;
+    font-weight: 400;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
     width: 500px;
@@ -188,7 +188,7 @@
     height: 50px;
     outline: none;
     font-size: 1.2rem;
-    color:#d36a9f;
+    color:#d36a9ef3;
     border-left: 1px solid white;
     background-color: rgba(0, 0, 0, 0.926);
     /* background-color: #d36a9f;; */
@@ -308,6 +308,16 @@
         top:-11px;
         height: 82px;
     }
+
+        
+    .favorite-movie-card .buttons .watch {
+        font-size: 1.2rem;
+    }
+
+    .favorite-movie-card .buttons .delete {
+        font-size: 1.1rem;
+    }
+    
 
     .info p span:nth-child(1) {
         text-align: center;
